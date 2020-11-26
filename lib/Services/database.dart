@@ -1,0 +1,31 @@
+// class FirestoreService {
+//   final CollectionReference _usersCollectionReference =
+//       Firestore.instance.collection('users');
+
+//   manage(e) {
+//     if (e is PlatformException) {
+//       return e.message;
+//     }
+
+//     return e.toString();
+//   }
+
+//   Future createUser(UserModel user) async {
+//     try {
+//       // creating user in database
+//       await _usersCollectionReference.document(user.id).setData(user.toJson());
+//     } catch (e) {
+//       manage(e);
+//     }
+//   }
+
+//   Future getUser(String uid) async {
+//     try {
+//       // retriving user in database
+//       var userData = await _usersCollectionReference.document(uid).get();
+//       return UserModel.fromJson(userData.data);
+//     } catch (e) {
+//       manage(e);
+//     }
+//   }
+// }
