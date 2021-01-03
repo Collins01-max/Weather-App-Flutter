@@ -1,10 +1,14 @@
+// import 'dart:convert';
+
+// convertUser(value) => jsonDecode(UserModel.fromJson(value).toJson());
+
 class UserModel {
   String uid;
   String email;
   String name;
   UserModel({this.email, this.name, this.uid});
 
-  Map<String, dynamic> userToJson() {
+  Map<String, dynamic> toJson() {
     return {"uid": uid, "email": email, "name": name};
   }
 

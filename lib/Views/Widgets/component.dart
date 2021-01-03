@@ -10,26 +10,27 @@ class Component extends StatelessWidget {
       child: Column(
         children: [
           Container(
-            height: 110,
-            width: 110,
+            height: 80,
+            width: 80,
             decoration: BoxDecoration(
+              // color: Colors.green,
+              image: DecorationImage(
+                image: AssetImage("images/cloud1.jpg"),
+                fit: BoxFit.cover,
+              ),
               borderRadius: BorderRadius.all(
                 Radius.circular(8),
               ),
-              image: DecorationImage(
-                image: AssetImage(""),
-                fit: BoxFit.contain,
-              ),
             ),
           ),
-          Expanded(
-              child: Center(
-            child: Text("28%",
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                )),
-          ))
+          SizedBox(height: 10),
+          Text(
+            "50%",
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold,
+            ),
+          )
         ],
       ),
     );

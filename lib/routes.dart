@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:weather_app/Views/home_view.dart';
+import 'package:weather_app/Views/login_view.dart';
+import 'package:weather_app/Views/register_view.dart';
 
-class Routins {
+class Routings {
   static Route<dynamic> routes(RouteSettings routeSettings) {
     switch (routeSettings.name) {
       case "loginView":
-        return MaterialPageRoute(builder: (BuildContext context) => null);
+        return MaterialPageRoute(
+            builder: (BuildContext context) => LoginView());
         break;
-      case "signUpView":
-        return MaterialPageRoute(builder: (BuildContext context) => null);
+      case "registerView":
+        return MaterialPageRoute(
+            builder: (BuildContext context) => RegisterView());
         break;
       case "spashScreenView":
         return MaterialPageRoute(builder: (BuildContext context) => null);

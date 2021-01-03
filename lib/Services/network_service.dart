@@ -1,6 +1,9 @@
 import 'package:http/http.dart' as http;
+import 'package:weather_app/Services/dialog_service.dart';
+import 'package:weather_app/locator.dart';
 
-class NetworkConnection {
+class NetworkService {
+  var dialogService = locator<DialogService>();
   Future<bool> checkConnection() async {
     try {
       var result = await http.get('https://www.google.com');
@@ -20,6 +23,11 @@ class NetworkConnection {
   Future onConnectivityDialog(Function function) async {
     if (await checkConnection()) {
       await function();
-    } else {}
+    } else {
+      dialogService.showDialog(
+        description: "No Internet connection, Please connect to the Internet",
+        title: "No Internet",
+      );
+    }
   }
 }

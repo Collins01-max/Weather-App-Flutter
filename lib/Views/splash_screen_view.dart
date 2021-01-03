@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:weather_app/Utilities/constants.dart';
 
 class SpalshScreenView extends StatefulWidget {
   @override
@@ -11,7 +10,7 @@ class _SpalshScreenViewState extends State<SpalshScreenView> {
   void initState() {
     Future.delayed(Duration(seconds: 2), () {
       print("SPLASH SCREEN VIEW ...");
-      Navigator.pushNamed(context, "homeView");
+      Navigator.pushNamed(context, "loginView");
     });
     super.initState();
   }
@@ -26,34 +25,69 @@ class _SpalshScreenViewState extends State<SpalshScreenView> {
               height: MediaQuery.of(context).size.height,
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
-                color: Colors.blueAccent,
+                // color: primaryColor,
+                image: DecorationImage(
+                  image: AssetImage("images/cloud1.jpg"),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  "Weather App",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
               ),
             ),
-            Align(
-              alignment: Alignment.topCenter,
-              child: Column(
-                children: [
-                  Text(
-                    Constants.appName,
-                    style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white,
-                        fontSize: 21),
-                  ),
-                  SizedBox(height: 20),
-                  Text(
-                    "Showing weather anywhere,\n more basic info",
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  )
-                ],
-              ),
-            )
+            // Align(
+            //   alignment: Alignment.center,
+            //   child: Container(
+            //     decoration: BoxDecoration(
+            //       image: DecorationImage(
+            //         image: AssetImage("images/cloud1.jpg"),
+            //         fit: BoxFit.contain,
+            //       ),
+            //     ),
+            //   ),
+            // ),
+            // Align(
+            //   alignment: Alignment.bottomCenter,
+            //   child: Text(
+            //     "Showing weather anywhere,\n more basic info",
+            //     style: TextStyle(
+            //       fontWeight: FontWeight.bold,
+            //       color: Colors.white,
+            //     ),
+            //   ),
+            // )
           ],
         ),
       ),
     );
   }
 }
+// Align(
+//               alignment: Alignment.topCenter,
+//               child: Column(
+//                 children: [
+//                   Text(
+//                     Constants.appName,
+//                     style: TextStyle(
+//                         fontWeight: FontWeight.bold,
+//                         color: Colors.white,
+//                         fontSize: 21),
+//                   ),
+//                   SizedBox(height: 20),
+// Text(
+//   "Showing weather anywhere,\n more basic info",
+//   style: TextStyle(
+//     fontWeight: FontWeight.bold,
+//     color: Colors.white,
+//   ),
+// )
+//     ],
+//   ),
+// )
