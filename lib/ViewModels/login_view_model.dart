@@ -9,7 +9,7 @@ class LoginViewModel extends BaseModel {
   final authService = locator<AuthService>();
   final dialogService = locator<DialogService>();
 
-  register({
+  login({
     @required String email,
     @required String password,
   }) async {

@@ -31,15 +31,25 @@ class HomeViewModel extends BaseModel {
           await weatherService.getWeatherDetails(city: value);
       setViewState(ViewState.Idle);
       if (apiResponse == ApiResponse.SUCCESS) {
+        setViewState(ViewState.Success);
         weatherModel = weatherService.weatherModel;
         notifyListeners();
         print("Saved Data Locally.");
         saveWeatherToDB();
+        print(weatherModel.locationName);
       } else if (apiResponse == ApiResponse.NULL) {
+        print("An error occured");
+        setViewState(ViewState.Error);
       } else if (apiResponse == ApiResponse.ERROR) {
-      } else {}
+        print("An error occured");
+        setViewState(ViewState.Error);
+      } else {
+        print("An error occured");
+        setViewState(ViewState.Error);
+      }
     } catch (e) {
       setViewState(ViewState.Idle);
+      print(e);
     }
   }
 
